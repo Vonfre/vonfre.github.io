@@ -43,29 +43,14 @@
                             <nav id="main_menu">
                                 <div class="menu_wrap">
                                     <ul class="nav sf-menu">
-                                      <li class="current"><a href="index.html">首页</a></li>
-                                      <li><a href="about.html">关于</a></li>
-                                      <li class="sub-menu"><a href="javascript:{}">Features</a>
-                                          <ul>
-                                              <li><a href="scaffolding.html"><span>-</span>Scaffolding</a></li>
-                                              <li><a href="typography.html"><span>-</span>Typography</a></li>
-                                              <li><a href="shortcodes.html"><span>-</span>Shortcodes</a></li>
-                                              <li><a href="tables.html"><span>-</span>Tables</a></li>                                          
-                                          </ul>                                          
-                                      </li>
-                                      <li class="sub-menu"><a href="javascript:{}">Portfolio</a>
-                                           <ul>
-                                              <li><a href="portfolio_2columns.html"><span>-</span>2 Columns</a></li>
-                                              <li><a href="portfolio_3columns.html"><span>-</span>3 Columns</a></li>
-                                              <li><a href="portfolio_4columns.html"><span>-</span>4 Columns</a></li>                                      
-                                          </ul>
-                                      </li>                                  
-                                      <li class="sub-menu"><a href="javascript:{}">Blog</a>
+                                      <li class="current"><a href="index.html">Home</a></li>                        
+                                      <li class="sub-menu"><a href="blog.html">Blog</a>
                                            <ul>
                                               <li><a href="blog.html"><span>-</span>Blog with right sidebar</a></li>
                                               <li><a href="blog_post.html"><span>-</span>Blog post</a></li>                                      
                                           </ul>
                                       </li>
+									  <li><a href="about.html">About</a></li>   
                                       <li><a href="contacts.html">Contacts</a></li>
                                     </ul>
                                 </div>
@@ -91,96 +76,82 @@
         </div>        
         <!--//slider-->
                        
-        <!--planning-->
-        <div class="wrap planning">
-            <div class="container">
-                <div class="row">
-                    <div class="span3">
-                        <a href="#">
-                        	<span class="img_icon icon1"></span>
-                            <span class="link_title">egestas dolor</span>
-                        	Nunc vel arcu arcu. Nulla mollis feugiat dui id tincidunt. Aenean ac lobortis elit.
-                        </a>
-                    </div>
-                    <div class="span3">
-                        <a href="#">
-                        	<span class="img_icon icon2"></span>
-                            <span class="link_title">lorem ipsum</span>
-                        	Nunc vel arcu arcu. Nulla mollis feugiat dui id tincidunt. Aenean ac lobortis elit.
-                        </a>
-                    </div>
-                    <div class="span3">
-                        <a href="#">
-                        	<span class="img_icon icon3"></span>
-                            <span class="link_title">vestilum eget</span>
-                        	Nunc vel arcu arcu. Nulla mollis feugiat dui id tincidunt. Aenean ac lobortis elit.
-                        </a>
-                    </div>
-                    <div class="span3">
-                        <a href="#">
-                        	<span class="img_icon icon4"></span>
-                            <span class="link_title">nulla feugiat</span>
-                        	Nunc vel arcu arcu. Nulla mollis feugiat dui id tincidunt. Aenean ac lobortis elit.
-                        </a>
-                    </div>                           	
-                </div>
-            </div>
-        </div>
-        <!--//planning-->
         
         <!--Welcome-->
         <div class="wrap block">
             <div class="container welcome_block">
             	<div class="welcome_line welcome_t"></div>
-            	Cras vulputate pretium massa gravida egestas consectetur?<span>Lorem ipsum dolor sit amet &amp; consectetur adipiscing elit!</span>
+				 <div id="timeDisplay"></div>
+				  <script>
+				  // 用于实时更新的函数
+				  function updateTime() {
+				      var now = new Date(); // 当前日期和时间
+				      var year = now.getFullYear(); // 年份
+				      var month = now.getMonth() + 1; // 月份（0-11，所以加1）
+				      var day = now.getDate(); // 日期
+				      var hour = now.getHours(); // 小时
+				      var minute = now.getMinutes(); // 分钟
+				      var second = now.getSeconds(); // 秒钟
+				  
+				      // 如果月份、日期、小时、分钟或秒钟小于10，则在前面添加0以保持两位数字的格式
+				      month = month < 10 ? '0' + month : month;
+				      day = day < 10 ? '0' + day : day;
+				      hour = hour < 10 ? '0' + hour : hour;
+				      minute = minute < 10 ? '0' + minute : minute;
+				      second = second < 10 ? '0' + second : second;
+				  
+				      // 创建实时时间的字符串
+				      var timeString = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+				  
+				      // 更新页面上的时间显示
+				      document.getElementById('timeDisplay').textContent = '这都 ' + timeString + ' 了，你还要学生信吗？';
+				  }
+				  
+				  // 每秒调用一次updateTime函数以更新时间
+				  setInterval(updateTime, 1000);
+				  </script>
+            	<span>Vonfre的生物信息学日记 &amp; 学术垃圾筐</span>
                 <div class="welcome_line welcome_b"></div>
             </div>
         </div>
-        <!--//Welcome-->         
-        
-        <!--featured works-->
-        <div class="wrap block carousel_block">
-            <div class="container">
-            	<h2 class="upper">featured works</h2>
-            	<div class="row">
-                    <div class="span12">
-                        <ul id="mycarousel" class="jcarousel-skin-tango">
-                            <li>
-                            	<div class="hover_img">
-                                	<a href="img/featured_works/1.jpg" rel="prettyPhoto[portfolio1]"><img src="img/featured_works/1.jpg" alt="" /><span class="portfolio_zoom1"></span></a>                                    
-                                </div>
-                            </li>
-                            <li>
-                            	<div class="hover_img">
-                                	<a href="img/featured_works/2.jpg" rel="prettyPhoto[portfolio1]"><img src="img/featured_works/2.jpg" alt="" /><span class="portfolio_zoom1"></span></a>                                    
-                                </div>
-                            </li>
-                            <li>
-                                <div class="hover_img">
-                                	<a href="img/featured_works/3.jpg" rel="prettyPhoto[portfolio1]"><img src="img/featured_works/3.jpg" alt="" /><span class="portfolio_zoom1"></span></a>                                    
-                                </div>
-                            </li> 
-                            <li>
-                                <div class="hover_img">
-                                	<a href="img/featured_works/4.jpg" rel="prettyPhoto[portfolio1]"><img src="img/featured_works/4.jpg" alt="" /><span class="portfolio_zoom1"></span></a>                                    
-                                </div>
-                            </li>
-                            <li>
-                            	<div class="hover_img">
-                                	<a href="img/featured_works/1.jpg" rel="prettyPhoto[portfolio1]"><img src="img/featured_works/1.jpg" alt="" /><span class="portfolio_zoom1"></span></a>                                    
-                                </div>
-                            </li>
-                            <li>
-                            	<div class="hover_img">
-                                	<a href="img/featured_works/2.jpg" rel="prettyPhoto[portfolio1]"><img src="img/featured_works/2.jpg" alt="" /><span class="portfolio_zoom1"></span></a>                                    
-                                </div>
-                            </li>                                                       
-                        </ul>                         
-                    </div>                
-                </div>                
-            </div>
-        </div>        
-        <!--//featured works-->
+        <!--//Welcome-->     
+			
+		<!--planning-->
+		<div class="wrap planning">
+		    <div class="container">
+		        <div class="row">
+		            <div class="span3">
+		                <a href="#">
+		                	<span class="img_icon icon1"></span>
+		                    <span class="link_title">R语言学习</span>
+		                	R语言可以为生物信息学中提供强大的统计分析和图形展示功能，并且可以通过丰富的生物信息学专用包高效地处理和分析大量的生物序列数据。
+		                </a>
+		            </div>
+		            <div class="span3">
+		                <a href="#">
+		                	<span class="img_icon icon2"></span>
+		                    <span class="link_title">Python学习</span>
+		                	Python语言具有简洁明了的语法，其灵活性和可扩展性便于自动化数据处理流程，以及高级数据分析和机器学习，帮助促进了生物数据的挖掘和解读。
+		                </a>
+		            </div>
+		            <div class="span3">
+		                <a href="#">
+		                	<span class="img_icon icon3"></span>
+		                    <span class="link_title">Linux学习</span>
+		                	Linux操作系统开源、稳定、其命令行界面具备强大的文件管理和批量处理能力，且大多数生信软件和工具都是在Linux环境下开发和运行。
+		                </a>
+		            </div>
+		            <div class="span3">
+		                <a href="#">
+		                	<span class="img_icon icon4"></span>
+		                    <span class="link_title">Web前端学习</span>
+		                	Web网页可构建用户友好的交互式界面，使得复杂的数据分析结果以直观的形式展现给非专业用户。（不然我这个网页写给谁看呢？）
+		                </a>
+		            </div>                           	
+		        </div>
+		    </div>
+		</div>
+		<!--//planning-->
         
         <!--Latest news-->
         <div class="wrap block">
@@ -236,79 +207,7 @@
         </div>
         <!--Latest news-->
         
-        <!--latest posts-->
-        <div class="wrap block carousel_block">
-            <div class="container">
-            	<h2 class="upper">latest posts</h2>
-            	<div class="row">
-                    <div class="span12">
-                        <ul id="mycarousel2" class="jcarousel-skin-tango">
-                            <li>
-                            	<div class="post_carousel">
-                                	<img src="img/home_blog/1.jpg" alt="" />
-                                	<div class="title_t"><a href="#">ipsum dolor ac egestas mas</a></div>
-                                    <div class="post_meta">
-                                		Posted by <a href="#">John Doe</a>  /  15 apr  / In <a href="#">Vacation</a>
-                                    </div>
-                                    Ut nisl turpis, tristique tincidunt cursus sed, aliquet nec odio. Integer ornare tincidunt neque a ristiquet phasellus mollis tortor. <a href="#" class="arrow_link">Read more...</a>
-                                </div>	
-                            </li>
-                            <li>
-                            	<div class="post_carousel">
-                                	<img src="img/home_blog/2.jpg" alt="" />
-                                	<div class="title_t"><a href="#">vestibulum egestas tortor</a></div>
-                                    <div class="post_meta">
-                                		Posted by <a href="#">John Doe</a>  /  15 apr  / In <a href="#">Vacation</a>
-                                    </div>
-                                    Ut nisl turpis, tristique tincidunt cursus sed, aliquet nec odio. Integer ornare tincidunt neque a ristiquet phasellus mollis tortor. <a href="#" class="arrow_link">Read more...</a>
-                                </div>	
-                            </li>
-                            <li>
-                            	<div class="post_carousel">
-                                	<img src="img/home_blog/3.jpg" alt="" />
-                                	<div class="title_t"><a href="#">Quisque sodales dolor</a></div>
-                                    <div class="post_meta">
-                                		Posted by <a href="#">John Doe</a>  /  15 apr  / In <a href="#">Vacation</a>
-                                    </div>
-                                    Ut nisl turpis, tristique tincidunt cursus sed, aliquet nec odio. Integer ornare tincidunt neque a ristiquet phasellus mollis tortor. <a href="#" class="arrow_link">Read more...</a>
-                                </div>	
-                            </li>
-                            <li>
-                            	<div class="post_carousel">
-                                	<img src="img/home_blog/4.jpg" alt="" />
-                                	<div class="title_t"><a href="#">ipsum dolor ac egestas mas</a></div>
-                                    <div class="post_meta">
-                                		Posted by <a href="#">John Doe</a>  /  15 apr  / In <a href="#">Vacation</a>
-                                    </div>
-                                    Ut nisl turpis, tristique tincidunt cursus sed, aliquet nec odio. Integer ornare tincidunt neque a ristiquet phasellus mollis tortor. <a href="#" class="arrow_link">Read more...</a>
-                                </div>	
-                            </li> 
-                            <li>
-                            	<div class="post_carousel">
-                                	<img src="img/home_blog/1.jpg" alt="" />
-                                	<div class="title_t"><a href="#">Tristique cursus tincidunt</a></div>
-                                    <div class="post_meta">
-                                		Posted by <a href="#">John Doe</a>  /  15 apr  / In <a href="#">Vacation</a>
-                                    </div>
-                                    Ut nisl turpis, tristique tincidunt cursus sed, aliquet nec odio. Integer ornare tincidunt neque a ristiquet phasellus mollis tortor. <a href="#" class="arrow_link">Read more...</a>
-                                </div>	
-                            </li>
-                            <li>
-                            	<div class="post_carousel">
-                                	<img src="img/home_blog/2.jpg" alt="" />
-                                	<div class="title_t"><a href="#">ipsum dolor ac egestas mas</a></div>
-                                    <div class="post_meta">
-                                		Posted by <a href="#">John Doe</a>  /  15 apr  / In <a href="#">Vacation</a>
-                                    </div>
-                                    Ut nisl turpis, tristique tincidunt cursus sed, aliquet nec odio. Integer ornare tincidunt neque a ristiquet phasellus mollis tortor. <a href="#" class="arrow_link">Read more...</a>
-                                </div>	
-                            </li>                                                                                   
-                        </ul>                        
-                    </div>                
-                </div>                
-            </div>
-        </div>        
-        <!--//latest posts--> 
+       
     </div>
     <!--//page_container-->
     
